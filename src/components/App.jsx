@@ -57,7 +57,7 @@ export class App extends Component {
           marginLeft: 50,
         }}
       >
-        <h1>Phoneboock</h1>
+        <h1>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmit}></ContactForm>
         <h2>Contacts</h2>
         <Filter value={this.state.filter} onChange={this.handleChangeFilter} />
