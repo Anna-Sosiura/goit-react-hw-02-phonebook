@@ -17,5 +17,5 @@ export const Label = styled.label`
   font-style: italic;
 `;
 export const Input = styled.input`
-  font-size: 30px;
+  font-size: 25px;
 `;

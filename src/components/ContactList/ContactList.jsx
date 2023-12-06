@@ -1,5 +1,5 @@
 import { List, DeleteBtn } from './ContactList.styled';
-const ContactList = ({ contact, filterContacts, onDeleteContact }) => {
+const ContactList = ({ filterContacts, onDeleteContact }) => {
   return (
     <List>
       {filterContacts.map(contact => (

@@ -9,7 +9,7 @@ const Filter = ({ value, onChange }) => {
       Find contacts by name
       <input
         style={{
-          fontSize: 30,
+          fontSize: 25,
         }}
         type="text"
         name="filter"
