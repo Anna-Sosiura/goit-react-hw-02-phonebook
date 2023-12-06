@@ -1,14 +1,14 @@
 import { Component } from 'react';
-export class ContactForm extends Component {
+import { Form, AddBtn, Label, Input } from './ContactForm.styled';
+class ContactForm extends Component {
   state = {
-    contacts: [],
     name: '',
     number: '',
   };
   handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
-    this.setState({ contacts: [], name: '', number: '' });
+    this.setState({ name: '', number: '' });
   };
 
   hendleChange = e => {
@@ -17,29 +17,30 @@ export class ContactForm extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
+      <Form onSubmit={this.handleSubmit}>
+        <Label>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             required
             value={this.state.name}
             onChange={this.hendleChange}
           />
-        </label>
-        <label>
+        </Label>
+        <Label>
           Number
-          <input
+          <Input
             type="tel"
             name="number"
             required
             value={this.state.number}
             onChange={this.hendleChange}
           />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+        </Label>
+        <AddBtn type="submit">Add contact</AddBtn>
+      </Form>
     );
   }
 }
+export default ContactForm;

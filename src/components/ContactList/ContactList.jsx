@@ -1,13 +1,21 @@
-// export const Todo = ({ todo: { text, id }, index, onDelete }) => {
-//   return (
-//     <TodoWrapperu>
-//       <Text textAlign="center" marginBottom="20px">
-//         TODO {index}
-//       </Text>
-//       <Text>{text}</Text>
-//       <DeleteButton onClick={() => onDelete(id)} type="button">
-//         <RiDeleteBinLine size={24} />
-//       </DeleteButton>
-//     </TodoWrapperu>
-//   );
-// };
+import { List, DeleteBtn } from './ContactList.styled';
+const ContactList = ({ contact, filterContacts, onDeleteContact }) => {
+  return (
+    <List>
+      {filterContacts.map(contact => (
+        <li
+          key={contact.id}
+          style={{
+            fontSize: 30,
+          }}
+        >
+          {contact.name}: {contact.number}
+          <DeleteBtn type="button" onClick={() => onDeleteContact(contact.id)}>
+            Delete
+          </DeleteBtn>
+        </li>
+      ))}
+    </List>
+  );
+};
+export default ContactList;
